@@ -10,6 +10,7 @@ namespace PaymentSystem.Domain.Entities
 {
     public class Customer : IdentityUser
     {
+        [Key]
         public long Id { get; set; }
 
         [Required, StringLength(11, ErrorMessage = "National id must have a maximum length of 11", MinimumLength = 1)]
