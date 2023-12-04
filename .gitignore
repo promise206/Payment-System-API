@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/PaymentSystem.Core/bin/Debug/net6.0
+/PaymentSystem.Core/obj
+/PaymentSystem.Domain/bin/Debug/net6.0
+/PaymentSystem.Domain/obj
+/PaymentSystem.Infrastructure/bin/Debug/net6.0
+/PaymentSystem.Infrastructure/obj
+/PaymentSystemAPI/.vs
+/PaymentSystemAPI/bin/Debug/net6.0
+/PaymentSystemAPI/obj
