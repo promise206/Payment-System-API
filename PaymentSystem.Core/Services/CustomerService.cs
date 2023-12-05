@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using PaymentSystem.Core.DTOs;
 using PaymentSystem.Core.Interfaces;
 using PaymentSystem.Domain.Entities;
@@ -38,12 +39,12 @@ namespace PaymentSystem.Core.Services
                 return ResponseDto<CustomerResponseDto>.Fail("Invalid credentials", (int)HttpStatusCode.BadRequest);
 
             _logger.LogInformation($"Getting customer details...NationalId: {NationalId}");
-            var customer = await _unitOfWork.Customer.Get(NationalId);
+            var customer = await _unitOfWork.Customer.GetByNationalId(NationalId);
             if (customer == null)
                 return ResponseDto<CustomerResponseDto>.Fail("customer does not exist", (int)HttpStatusCode.NotFound);
 
             var customerDetails = _mapper.Map<CustomerResponseDto>(customer);
-            _logger.LogInformation($"Successful Customer Details: {customerDetails}");
+            _logger.LogInformation($"Successful Customer Details: {JsonConvert.SerializeObject(customerDetails)}");
 
             return ResponseDto<CustomerResponseDto>.Success("", customerDetails);
         }
@@ -55,7 +56,7 @@ namespace PaymentSystem.Core.Services
         /// <returns></returns>
         public async Task<ResponseDto<bool>> InsertCustomerAsync(CustomerRequestDto customerDetails)
         {
-            var checkEmail = await _unitOfWork.Customer.Get(customerDetails.NationalId);
+            var checkEmail = await _unitOfWork.Customer.GetByNationalId(customerDetails.NationalId);
             if (checkEmail != null)
             {
                 _logger.LogError($"Customer with National Id: {customerDetails.NationalId} already exist!");
@@ -66,13 +67,13 @@ namespace PaymentSystem.Core.Services
             var insertDetails = _unitOfWork.Customer.InsertAsync(userModel);
             await _unitOfWork.Save();
 
-            _logger.LogInformation($"Customer detials successfully saved: {insertDetails}");
+            _logger.LogInformation($"Customer detials successfully saved: {JsonConvert.SerializeObject(insertDetails)}");
             return ResponseDto<bool>.Success("Customer details Succesfully saved", true, (int)HttpStatusCode.Created);
         }
 
         public async Task<ResponseDto<bool>> UpdateCustomerDetailsAsync(CustomerEditRequestDto details)
         {
-            var customer = await _unitOfWork.Customer.Get(details.NationalId);
+            var customer = await _unitOfWork.Customer.GetByNationalId(details.NationalId);
 
             if (customer == null)
             {
@@ -95,7 +96,7 @@ namespace PaymentSystem.Core.Services
         /// <returns></returns>
         public async Task<ResponseDto<bool>> DeleteCustomerAsync(string NationalId)
         {
-            var customer = await _unitOfWork.Customer.Get(NationalId);
+            var customer = await _unitOfWork.Customer.GetByNationalId(NationalId);
 
             if (customer == null)
             {

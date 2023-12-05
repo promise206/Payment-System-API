@@ -39,6 +39,7 @@ namespace PaymentSystemAPI.Controllers
         /// </summary>
         /// <param name="customerDetails"></param>
         /// <returns></returns>
+        [HttpPost(Name = "insert-customer-details")]
         public async Task<IActionResult> InsertCustomer(CustomerRequestDto customerDetails)
         {
             _logger.LogInformation($"Inserting customer details...");
@@ -51,6 +52,7 @@ namespace PaymentSystemAPI.Controllers
         /// </summary>
         /// <param name="NationalId"></param>
         /// <returns></returns>
+        [HttpDelete(Name = "delete-customer-details")]
         public async Task<IActionResult> DeleteCustomer(string NationalId)
         {
             _logger.LogInformation($"deleting customer details...");
@@ -63,6 +65,7 @@ namespace PaymentSystemAPI.Controllers
         /// </summary>
         /// <param name="details"></param>
         /// <returns></returns>
+        [HttpPut(Name = "update-customer-details")]
         public async Task<IActionResult> UpdateCustomer(CustomerEditRequestDto details)
         {
             _logger.LogInformation($"Editing customer details...");

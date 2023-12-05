@@ -24,9 +24,9 @@ namespace PaymentSystem.Infrastructure.Repository
         /// </summary>
         /// <param name="NationalId"></param>
         /// <returns></returns>
-        public async Task<Customer?> Get(string NationalId)
+        public async Task<Customer?> GetByNationalId(string NationalId)
         {
-            return await _dbContext.Customer.Where(x => x.Id == NationalId).FirstOrDefaultAsync();
+            return await _dbContext.Customer.Where(x => x.NationalId == NationalId).FirstOrDefaultAsync();
         }
 
         /// <summary>
