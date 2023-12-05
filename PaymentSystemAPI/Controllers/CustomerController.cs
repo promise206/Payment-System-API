@@ -46,10 +46,27 @@ namespace PaymentSystemAPI.Controllers
             return StatusCode(response.StatusCode, response);
         }
 
+        /// <summary>
+        /// Delete customer by national id
+        /// </summary>
+        /// <param name="NationalId"></param>
+        /// <returns></returns>
         public async Task<IActionResult> DeleteCustomer(string NationalId)
         {
             _logger.LogInformation($"deleting customer details...");
             var response = await _customerService.DeleteCustomerAsync(NationalId);
+            return StatusCode(response.StatusCode, response);
+        }
+
+        /// <summary>
+        /// update customer details
+        /// </summary>
+        /// <param name="details"></param>
+        /// <returns></returns>
+        public async Task<IActionResult> UpdateCustomer(CustomerEditRequestDto details)
+        {
+            _logger.LogInformation($"Editing customer details...");
+            var response = await _customerService.UpdateCustomerDetailsAsync(details);
             return StatusCode(response.StatusCode, response);
         }
     }

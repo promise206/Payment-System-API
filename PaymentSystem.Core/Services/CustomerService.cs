@@ -70,9 +70,22 @@ namespace PaymentSystem.Core.Services
             return ResponseDto<bool>.Success("Customer details Succesfully saved", true, (int)HttpStatusCode.Created);
         }
 
-        public async Task<bool> UpdateCustomerDetailsAsync(CustomerRequestDto customerDetails)
+        public async Task<ResponseDto<bool>> UpdateCustomerDetailsAsync(CustomerEditRequestDto details)
         {
-            return true;
+            var customer = await _unitOfWork.Customer.Get(details.NationalId);
+
+            if (customer == null)
+            {
+                _logger.LogError($"Customer with NationalId: {details.NationalId} not found!");
+                return ResponseDto<bool>.Fail("Customer not found!", (int)HttpStatusCode.NotFound);
+            }
+
+            var userModel = _mapper.Map<Customer>(details);
+
+            _unitOfWork.Customer.Update(userModel);
+            await _unitOfWork.Save();
+
+            return ResponseDto<bool>.Success("Customer details updated Succesfully", true, (int)HttpStatusCode.OK);
         }
 
         /// <summary>

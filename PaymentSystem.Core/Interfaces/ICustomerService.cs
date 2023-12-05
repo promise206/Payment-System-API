@@ -1,4 +1,5 @@
-﻿using PaymentSystem.Core.DTOs;
+﻿using Microsoft.AspNetCore.Mvc;
+using PaymentSystem.Core.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,5 +30,12 @@ namespace PaymentSystem.Core.Interfaces
         /// <param name="NationalId"></param>
         /// <returns></returns>
         Task<ResponseDto<bool>> DeleteCustomerAsync(string NationalId);
+
+        /// <summary>
+        /// update customer details
+        /// </summary>
+        /// <param name="details"></param>
+        /// <returns></returns>
+        Task<ResponseDto<bool>> UpdateCustomerDetailsAsync(CustomerEditRequestDto details);
     }
 }

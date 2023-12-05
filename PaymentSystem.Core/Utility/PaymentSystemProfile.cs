@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using PaymentSystem.Core.DTOs;
+using PaymentSystem.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +13,9 @@ namespace PaymentSystem.Core.Utility
     {
         public PaymentSystemProfile()
         {
-            /*CreateMap<RegistrationDTO, AppUser>()
-                 .ForMember(dest => dest.Email, act => act.MapFrom(src => src.Email.ToLower()))
-                 .ForMember(dest => dest.UserName, act => act.MapFrom(src => src.Email.ToLower()));
-            CreateMap<GetProfileDTO, AppUser>().ReverseMap();
-            CreateMap<AppUser, GetUserDTO>().ReverseMap();*/
+            CreateMap<CustomerRequestDto, Customer>();
+            CreateMap<CustomerResponseDto, Customer>().ReverseMap();
+            CreateMap<CustomerEditRequestDto, Customer>();
         }
     }
 }
