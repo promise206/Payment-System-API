@@ -83,7 +83,7 @@ namespace PaymentSystem.Infrastructure.Repository
             }
         }
 
-        public int Count(Expression<Func<T, bool>> lambda)
+        public int CountAsync(Expression<Func<T, bool>> lambda)
         {
             try
             {

@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace PaymentSystem.Core.DTOs
 {
-    public class CustomerEditRequestDto
+    public class CustomerUpdateRequestDto
     {
-        [Required, StringLength(11, ErrorMessage = "National id must have a maximum length of 11", MinimumLength = 1)]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "National id can only contain numerical values.")]
-        public string NationalId { get; set; }
-
         public string Name { get; set; }
 
         public string Surname { get; set; }

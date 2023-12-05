@@ -66,10 +66,10 @@ namespace PaymentSystemAPI.Controllers
         /// <param name="details"></param>
         /// <returns></returns>
         [HttpPut(Name = "update-customer-details")]
-        public async Task<IActionResult> UpdateCustomer(CustomerEditRequestDto details)
+        public async Task<IActionResult> UpdateCustomer(string nationalId, CustomerUpdateRequestDto details)
         {
             _logger.LogInformation($"Editing customer details...");
-            var response = await _customerService.UpdateCustomerDetailsAsync(details);
+            var response = await _customerService.UpdateCustomerDetailsAsync(nationalId, details);
             return StatusCode(response.StatusCode, response);
         }
     }

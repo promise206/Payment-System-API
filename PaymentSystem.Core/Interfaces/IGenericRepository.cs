@@ -13,6 +13,6 @@ namespace PaymentSystem.Core.Interfaces
         Task DeleteAsync(string id);
         void DeleteRangeAsync(IEnumerable<T> entities);
         void Update(T item);
-        int Count(Expression<Func<T, bool>> lambda);
+        int CountAsync(Expression<Func<T, bool>> lambda);
     }
 }

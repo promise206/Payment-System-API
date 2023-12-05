@@ -48,13 +48,14 @@ namespace PaymentSystem.Core.Services
                 var customerDetails = _mapper.Map<CustomerResponseDto>(customer);
                 _logger.LogInformation($"Successful Customer Details: {JsonConvert.SerializeObject(customerDetails)}");
 
+                await _unitOfWork.Commit();
                 return ResponseDto<CustomerResponseDto>.Success("", customerDetails);
             }
             catch (Exception exception)
             {
                 _logger.LogError(exception, exception.Message);
                 await _unitOfWork.Rollback();
-                throw;
+                return ResponseDto<CustomerResponseDto>.Fail("An error occurred", (int)HttpStatusCode.InternalServerError);
             }
         }
 
@@ -67,7 +68,7 @@ namespace PaymentSystem.Core.Services
         {
             try
             {
-                if (_unitOfWork.Customer.Count(x => x.NationalId == customerDetails.NationalId)> 0)
+                if (_unitOfWork.Customer.CountAsync(x => x.NationalId == customerDetails.NationalId)> 0)
                 {
                     _logger.LogError($"Customer with National Id: {customerDetails.NationalId} already exist!");
                     return ResponseDto<bool>.Fail("Customer already Exists", (int)HttpStatusCode.NotFound);
@@ -84,23 +85,31 @@ namespace PaymentSystem.Core.Services
             {
                 await _unitOfWork.Rollback();
                 _logger.LogError(exception, exception.Message);
-                throw;
+                return ResponseDto<bool>.Fail("An error occurred", (int)HttpStatusCode.InternalServerError);
             }
         }
 
-        public async Task<ResponseDto<bool>> UpdateCustomerDetailsAsync(CustomerEditRequestDto details)
+        /// <summary>
+        /// Update customer details
+        /// </summary>
+        /// <param name="nationalId"></param>
+        /// <param name="details"></param>
+        /// <returns></returns>
+        public async Task<ResponseDto<bool>> UpdateCustomerDetailsAsync(string nationalId, CustomerUpdateRequestDto details)
         {
             try
             {
-                if (_unitOfWork.Customer.Count(x => x.NationalId == details.NationalId) < 1)
+                var existingCustomer = await _unitOfWork.Customer.GetByNationalId(nationalId);
+
+                if (_unitOfWork.Customer.CountAsync(x => x.NationalId == nationalId) < 1)
                 {
-                    _logger.LogError($"Customer with NationalId: {details.NationalId} not found!");
+                    _logger.LogError($"Customer with NationalId: {nationalId} not found!");
                     return ResponseDto<bool>.Fail("Customer not found!", (int)HttpStatusCode.NotFound);
                 }
 
-                var userModel = _mapper.Map<Customer>(details);
+                _mapper.Map(details, existingCustomer);
 
-                _unitOfWork.Customer.Update(userModel);
+                _unitOfWork.Customer.Update(existingCustomer);
                 await _unitOfWork.Save();
 
                 return ResponseDto<bool>.Success("Customer details updated Succesfully", true, (int)HttpStatusCode.OK);
@@ -109,7 +118,7 @@ namespace PaymentSystem.Core.Services
             {
                 await _unitOfWork.Rollback();
                 _logger.LogError(exception, exception.Message);
-                throw;
+                return ResponseDto<bool>.Fail("An error occurred", (int)HttpStatusCode.InternalServerError);
             }
         }
 
@@ -122,7 +131,7 @@ namespace PaymentSystem.Core.Services
         {
             try
             {
-                if (_unitOfWork.Customer.Count(x => x.NationalId == nationalId) < 1)
+                if (_unitOfWork.Customer.CountAsync(x => x.NationalId == nationalId) < 1)
                 {
                     _logger.LogError($"Customer with NationalId: {nationalId} not found!");
                     return ResponseDto<bool>.Fail("Customer not found!", (int)HttpStatusCode.NotFound);
@@ -138,7 +147,7 @@ namespace PaymentSystem.Core.Services
             {
                 await _unitOfWork.Rollback();
                 _logger.LogError(exception, exception.Message);
-                throw;
+                return ResponseDto<bool>.Fail("An error occurred", (int)HttpStatusCode.InternalServerError);
             }
         }
     }

@@ -1043,3 +1043,138 @@ WHERE "Id" = @p0 AND "ConcurrencyStamp" = @p1;
 [2023-12-05 13:09:25.775 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI) in 54584.0538ms
 [2023-12-05 13:09:25.775 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
 [2023-12-05 13:09:25.778 +01:00  INF]  Request finished HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 200 - application/json;+charset=utf-8 54586.6089ms
+[2023-12-05 15:38:00.875 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 15:38:01.539 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 15:38:01.540 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 15:38:01.544 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 15:38:01.544 +01:00  INF]  Hosting environment: Development
+[2023-12-05 15:38:01.545 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 15:38:03.070 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 15:38:04.122 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 1065.0236ms
+[2023-12-05 15:38:04.387 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 15:38:04.565 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 15:38:04.610 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 223.6216ms
+[2023-12-05 15:38:04.709 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 143.9293ms
+[2023-12-05 15:38:04.871 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 15:38:05.329 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 458.8249ms
+[2023-12-05 15:38:29.122 +01:00  INF]  Request starting HTTP/2 PUT https://localhost:7214/api/v1/Customer application/json 183
+[2023-12-05 15:38:29.141 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer (PaymentSystemAPI)'
+[2023-12-05 15:38:29.199 +01:00  INF]  Route matched with {action = "UpdateCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateCustomer(PaymentSystem.Core.DTOs.CustomerUpdateRequestDto) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 15:38:32.002 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 15:38:35.476 +01:00  INF]  Editing customer details...
+[2023-12-05 15:38:48.991 +01:00  INF]  Executed DbCommand (117ms) [Parameters=[@__details_NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__details_NationalId_0
+[2023-12-05 15:39:35.929 +01:00  INF]  Executed DbCommand (42ms) [Parameters=[@p20='?', @p0='?' (DbType = Int32), @p1='?', @p21='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?', @p17='?', @p18='?' (DbType = Boolean), @p19='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "CustomerNumber" = @p2, "DateOfBirth" = @p3, "Email" = @p4, "EmailConfirmed" = @p5, "LockoutEnabled" = @p6, "LockoutEnd" = @p7, "Name" = @p8, "NationalId" = @p9, "NormalizedEmail" = @p10, "NormalizedUserName" = @p11, "PasswordHash" = @p12, "PhoneNumber" = @p13, "PhoneNumberConfirmed" = @p14, "SecurityStamp" = @p15, "Surname" = @p16, "TransactionHistory" = @p17, "TwoFactorEnabled" = @p18, "UserName" = @p19
+WHERE "Id" = @p20 AND "ConcurrencyStamp" = @p21;
+[2023-12-05 15:40:06.351 +01:00  ERR]  The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at PaymentSystem.Infrastructure.Repository.UnitOfWork.Save() in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\UnitOfWork.cs:line 55
+[2023-12-05 15:40:06.578 +01:00  ERR]  The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at PaymentSystem.Infrastructure.Repository.UnitOfWork.Save() in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\UnitOfWork.cs:line 55
+   at PaymentSystem.Core.Services.CustomerService.UpdateCustomerDetailsAsync(CustomerUpdateRequestDto details) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 105
+[2023-12-05 15:40:06.805 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer (PaymentSystemAPI) in 97597.2591ms
+[2023-12-05 15:40:06.810 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer (PaymentSystemAPI)'
+[2023-12-05 15:40:06.818 +01:00  ERR]  An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at PaymentSystem.Infrastructure.Repository.UnitOfWork.Save() in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\UnitOfWork.cs:line 55
+   at PaymentSystem.Core.Services.CustomerService.UpdateCustomerDetailsAsync(CustomerUpdateRequestDto details) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 105
+   at PaymentSystem.Core.Services.CustomerService.UpdateCustomerDetailsAsync(CustomerUpdateRequestDto details) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 113
+   at PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer(CustomerUpdateRequestDto details) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\Controllers\CustomerController.cs:line 72
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2023-12-05 15:40:06.893 +01:00  INF]  Request finished HTTP/2 PUT https://localhost:7214/api/v1/Customer application/json 183 - 500 - text/plain;+charset=utf-8 97771.7336ms
+[2023-12-05 15:40:19.805 +01:00  INF]  Request starting HTTP/2 PUT https://localhost:7214/api/v1/Customer application/json 183
+[2023-12-05 15:40:19.805 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer (PaymentSystemAPI)'
+[2023-12-05 15:40:19.806 +01:00  INF]  Route matched with {action = "UpdateCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateCustomer(PaymentSystem.Core.DTOs.CustomerUpdateRequestDto) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 15:40:22.683 +01:00  INF]  Editing customer details...
+[2023-12-05 15:40:33.268 +01:00  INF]  Executed DbCommand (1ms) [Parameters=[@__details_NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__details_NationalId_0
+[2023-12-05 15:55:15.015 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 15:55:15.578 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 15:55:15.578 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 15:55:15.583 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 15:55:15.584 +01:00  INF]  Hosting environment: Development
+[2023-12-05 15:55:15.584 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 15:55:16.950 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 15:55:18.052 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 1117.3214ms
+[2023-12-05 15:55:18.113 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 15:55:18.162 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 15:55:18.186 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 73.8391ms
+[2023-12-05 15:55:18.576 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 413.2990ms
+[2023-12-05 15:55:18.874 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 15:55:19.321 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 443.9081ms
+[2023-12-05 15:55:52.192 +01:00  INF]  Request starting HTTP/2 PUT https://localhost:7214/api/v1/Customer?nationalId=22222222223 application/json 154
+[2023-12-05 15:55:52.221 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer (PaymentSystemAPI)'
+[2023-12-05 15:55:52.276 +01:00  INF]  Route matched with {action = "UpdateCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateCustomer(System.String, PaymentSystem.Core.DTOs.CustomerUpdateRequestDto) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 15:55:54.593 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 15:56:16.640 +01:00  INF]  Editing customer details...
+[2023-12-05 15:56:17.841 +01:00  INF]  Executed DbCommand (230ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 15:56:40.977 +01:00  INF]  Executed DbCommand (5ms) [Parameters=[@__nationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__nationalId_0
+[2023-12-05 15:56:53.065 +01:00  INF]  Executed DbCommand (24ms) [Parameters=[@p20='?', @p0='?' (DbType = Int32), @p1='?', @p21='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?', @p17='?', @p18='?' (DbType = Boolean), @p19='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "CustomerNumber" = @p2, "DateOfBirth" = @p3, "Email" = @p4, "EmailConfirmed" = @p5, "LockoutEnabled" = @p6, "LockoutEnd" = @p7, "Name" = @p8, "NationalId" = @p9, "NormalizedEmail" = @p10, "NormalizedUserName" = @p11, "PasswordHash" = @p12, "PhoneNumber" = @p13, "PhoneNumberConfirmed" = @p14, "SecurityStamp" = @p15, "Surname" = @p16, "TransactionHistory" = @p17, "TwoFactorEnabled" = @p18, "UserName" = @p19
+WHERE "Id" = @p20 AND "ConcurrencyStamp" = @p21;
+[2023-12-05 15:57:21.334 +01:00  INF]  Executing ObjectResult, writing value of type 'PaymentSystem.Core.DTOs.ResponseDto`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-12-05 15:57:21.359 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer (PaymentSystemAPI) in 89067.1501ms
+[2023-12-05 15:57:21.363 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer (PaymentSystemAPI)'
+[2023-12-05 15:57:21.390 +01:00  INF]  Request finished HTTP/2 PUT https://localhost:7214/api/v1/Customer?nationalId=22222222223 application/json 154 - 200 - application/json;+charset=utf-8 89198.3425ms

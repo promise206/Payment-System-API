@@ -32,10 +32,11 @@ namespace PaymentSystem.Core.Interfaces
         Task<ResponseDto<bool>> DeleteCustomerAsync(string NationalId);
 
         /// <summary>
-        /// update customer details
+        /// Update customer details
         /// </summary>
+        /// <param name="nationalId"></param>
         /// <param name="details"></param>
         /// <returns></returns>
-        Task<ResponseDto<bool>> UpdateCustomerDetailsAsync(CustomerEditRequestDto details);
+        Task<ResponseDto<bool>> UpdateCustomerDetailsAsync(string nationalId, CustomerUpdateRequestDto details);
     }
 }
