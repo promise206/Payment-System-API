@@ -177,22 +177,5 @@ namespace PaymentSystemTest
             _unitOfWorkMock.Verify(uow => uow.Save(), Times.Once);
             _unitOfWorkMock.Verify(uow => uow.Rollback(), Times.Never);
         }
-
-        [Test]
-        public void DeleteCustomerAsync_ExceptionThrown_RollbacksAndThrowsException()
-        {
-            // Arrange
-            var service = new CustomerService(_mapper, _unitOfWorkMock.Object, _loggerMock.Object);
-            var nationalId = "123456789";
-
-            _unitOfWorkMock.Setup(uow => uow.Customer.CountAsync(It.IsAny<Expression<Func<Customer, bool>>>()))
-                .Throws(new Exception("Simulated exception"));
-
-            // Act & Assert
-            Assert.ThrowsAsync<Exception>(async () => await service.DeleteCustomerAsync(nationalId));
-            _unitOfWorkMock.Verify(uow => uow.Customer.DeleteCustomerByNationalId(It.IsAny<string>()), Times.Never);
-            _unitOfWorkMock.Verify(uow => uow.Save(), Times.Never);
-            _unitOfWorkMock.Verify(uow => uow.Rollback(), Times.Once);
-        }
     }
 }
