@@ -14,7 +14,7 @@ namespace PaymentSystem.Core.Utility
         public PaymentSystemProfile()
         {
             CreateMap<CustomerRequestDto, Customer>();
-            CreateMap<CustomerResponseDto, Customer>().ReverseMap();
+            CreateMap<Customer, CustomerResponseDto>();
             CreateMap<CustomerEditRequestDto, Customer>();
         }
     }

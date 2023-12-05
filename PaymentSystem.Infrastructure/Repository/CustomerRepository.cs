@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using PaymentSystem.Core.Interfaces;
 using PaymentSystem.Domain.Entities;
 using System;
@@ -26,7 +27,14 @@ namespace PaymentSystem.Infrastructure.Repository
         /// <returns></returns>
         public async Task<Customer?> GetByNationalId(string NationalId)
         {
-            return await _dbContext.Customer.Where(x => x.NationalId == NationalId).FirstOrDefaultAsync();
+            try
+            {
+                return await _dbContext.Customer.Where(x => x.NationalId == NationalId).FirstOrDefaultAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         /// <summary>
@@ -36,7 +44,14 @@ namespace PaymentSystem.Infrastructure.Repository
         /// <returns></returns>
         public async Task DeleteCustomerByNationalId(string NationalId)
         {
-            _db.Remove(await _db.FindAsync(NationalId));
+            try
+            {
+                _db.Remove(await _dbContext.Customer.Where(x => x.NationalId == NationalId).FirstOrDefaultAsync());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

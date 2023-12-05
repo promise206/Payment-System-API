@@ -35,18 +35,27 @@ namespace PaymentSystem.Core.Services
         /// <returns></returns>
         public async Task<ResponseDto<CustomerResponseDto>> GetCustomerAsync(string NationalId)
         {
-            if (string.IsNullOrWhiteSpace(NationalId))
-                return ResponseDto<CustomerResponseDto>.Fail("Invalid credentials", (int)HttpStatusCode.BadRequest);
+            try
+            {
+                if (string.IsNullOrWhiteSpace(NationalId))
+                    return ResponseDto<CustomerResponseDto>.Fail("Invalid credentials", (int)HttpStatusCode.BadRequest);
 
-            _logger.LogInformation($"Getting customer details...NationalId: {NationalId}");
-            var customer = await _unitOfWork.Customer.GetByNationalId(NationalId);
-            if (customer == null)
-                return ResponseDto<CustomerResponseDto>.Fail("customer does not exist", (int)HttpStatusCode.NotFound);
+                _logger.LogInformation($"Getting customer details...NationalId: {NationalId}");
+                var customer = await _unitOfWork.Customer.GetByNationalId(NationalId);
+                if (customer == null)
+                    return ResponseDto<CustomerResponseDto>.Fail("customer does not exist", (int)HttpStatusCode.NotFound);
 
-            var customerDetails = _mapper.Map<CustomerResponseDto>(customer);
-            _logger.LogInformation($"Successful Customer Details: {JsonConvert.SerializeObject(customerDetails)}");
+                var customerDetails = _mapper.Map<CustomerResponseDto>(customer);
+                _logger.LogInformation($"Successful Customer Details: {JsonConvert.SerializeObject(customerDetails)}");
 
-            return ResponseDto<CustomerResponseDto>.Success("", customerDetails);
+                return ResponseDto<CustomerResponseDto>.Success("", customerDetails);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, exception.Message);
+                await _unitOfWork.Rollback();
+                throw;
+            }
         }
 
         /// <summary>
@@ -56,59 +65,81 @@ namespace PaymentSystem.Core.Services
         /// <returns></returns>
         public async Task<ResponseDto<bool>> InsertCustomerAsync(CustomerRequestDto customerDetails)
         {
-            var checkEmail = await _unitOfWork.Customer.GetByNationalId(customerDetails.NationalId);
-            if (checkEmail != null)
+            try
             {
-                _logger.LogError($"Customer with National Id: {customerDetails.NationalId} already exist!");
-                return ResponseDto<bool>.Fail("Customer already Exists", (int)HttpStatusCode.NotFound);
+                if (_unitOfWork.Customer.Count(x => x.NationalId == customerDetails.NationalId)> 0)
+                {
+                    _logger.LogError($"Customer with National Id: {customerDetails.NationalId} already exist!");
+                    return ResponseDto<bool>.Fail("Customer already Exists", (int)HttpStatusCode.NotFound);
+                }
+                var userModel = _mapper.Map<Customer>(customerDetails);
+
+                var insertDetails = _unitOfWork.Customer.InsertAsync(userModel);
+                await _unitOfWork.Save();
+
+                _logger.LogInformation($"Customer detials successfully saved: {JsonConvert.SerializeObject(insertDetails)}");
+                return ResponseDto<bool>.Success("Customer details Succesfully saved", true, (int)HttpStatusCode.Created);
             }
-            var userModel = _mapper.Map<Customer>(customerDetails);
-
-            var insertDetails = _unitOfWork.Customer.InsertAsync(userModel);
-            await _unitOfWork.Save();
-
-            _logger.LogInformation($"Customer detials successfully saved: {JsonConvert.SerializeObject(insertDetails)}");
-            return ResponseDto<bool>.Success("Customer details Succesfully saved", true, (int)HttpStatusCode.Created);
+            catch (Exception exception)
+            {
+                await _unitOfWork.Rollback();
+                _logger.LogError(exception, exception.Message);
+                throw;
+            }
         }
 
         public async Task<ResponseDto<bool>> UpdateCustomerDetailsAsync(CustomerEditRequestDto details)
         {
-            var customer = await _unitOfWork.Customer.GetByNationalId(details.NationalId);
-
-            if (customer == null)
+            try
             {
-                _logger.LogError($"Customer with NationalId: {details.NationalId} not found!");
-                return ResponseDto<bool>.Fail("Customer not found!", (int)HttpStatusCode.NotFound);
+                if (_unitOfWork.Customer.Count(x => x.NationalId == details.NationalId) < 1)
+                {
+                    _logger.LogError($"Customer with NationalId: {details.NationalId} not found!");
+                    return ResponseDto<bool>.Fail("Customer not found!", (int)HttpStatusCode.NotFound);
+                }
+
+                var userModel = _mapper.Map<Customer>(details);
+
+                _unitOfWork.Customer.Update(userModel);
+                await _unitOfWork.Save();
+
+                return ResponseDto<bool>.Success("Customer details updated Succesfully", true, (int)HttpStatusCode.OK);
             }
-
-            var userModel = _mapper.Map<Customer>(details);
-
-            _unitOfWork.Customer.Update(userModel);
-            await _unitOfWork.Save();
-
-            return ResponseDto<bool>.Success("Customer details updated Succesfully", true, (int)HttpStatusCode.OK);
+            catch (Exception exception)
+            {
+                await _unitOfWork.Rollback();
+                _logger.LogError(exception, exception.Message);
+                throw;
+            }
         }
 
         /// <summary>
         /// delete customer
         /// </summary>
-        /// <param name="NationalId"></param>
+        /// <param name="nationalId"></param>
         /// <returns></returns>
-        public async Task<ResponseDto<bool>> DeleteCustomerAsync(string NationalId)
+        public async Task<ResponseDto<bool>> DeleteCustomerAsync(string nationalId)
         {
-            var customer = await _unitOfWork.Customer.GetByNationalId(NationalId);
-
-            if (customer == null)
+            try
             {
-                _logger.LogError($"Customer with NationalId: {NationalId} not found!");
-                return ResponseDto<bool>.Fail("Customer not found!", (int)HttpStatusCode.NotFound);
+                if (_unitOfWork.Customer.Count(x => x.NationalId == nationalId) < 1)
+                {
+                    _logger.LogError($"Customer with NationalId: {nationalId} not found!");
+                    return ResponseDto<bool>.Fail("Customer not found!", (int)HttpStatusCode.NotFound);
+                }
+
+                await _unitOfWork.Customer.DeleteCustomerByNationalId(nationalId);
+                await _unitOfWork.Save();
+
+                _logger.LogError($"Customer with national Id: {nationalId} deleted successfully");
+                return ResponseDto<bool>.Success("Customer deleted Succesfully", true, (int)HttpStatusCode.OK);
             }
-
-            await _unitOfWork.Customer.DeleteCustomerByNationalId(customer.NationalId);
-            await _unitOfWork.Save();
-
-            _logger.LogError($"Customer with national Id: {NationalId} deleted successfully");
-            return ResponseDto<bool>.Success("Customer deleted Succesfully", true, (int)HttpStatusCode.OK); ;
+            catch (Exception exception)
+            {
+                await _unitOfWork.Rollback();
+                _logger.LogError(exception, exception.Message);
+                throw;
+            }
         }
     }
 }

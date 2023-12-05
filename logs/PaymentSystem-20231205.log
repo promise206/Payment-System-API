@@ -287,3 +287,759 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13
 [2023-12-05 11:33:11.463 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI) in 107323.2298ms
 [2023-12-05 11:33:11.469 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI)'
 [2023-12-05 11:33:11.514 +01:00  INF]  Request finished HTTP/2 POST https://localhost:7214/api/v1/Customer application/json 192 - 201 - application/json;+charset=utf-8 107517.4697ms
+[2023-12-05 12:05:26.910 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:05:27.507 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:05:27.507 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:05:27.518 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:05:27.518 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:05:27.519 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:05:28.684 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 12:05:29.786 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 1117.4172ms
+[2023-12-05 12:05:30.012 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 12:05:30.023 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 12:05:30.047 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 24.8648ms
+[2023-12-05 12:05:30.348 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 335.9943ms
+[2023-12-05 12:05:30.539 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 12:05:31.198 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 659.5407ms
+[2023-12-05 12:06:05.596 +01:00  INF]  Request starting HTTP/2 POST https://localhost:7214/api/v1/Customer application/json 192
+[2023-12-05 12:06:05.631 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI)'
+[2023-12-05 12:06:05.724 +01:00  INF]  Route matched with {action = "InsertCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InsertCustomer(PaymentSystem.Core.DTOs.CustomerRequestDto) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:06:10.844 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 12:06:23.566 +01:00  INF]  Inserting customer details...
+[2023-12-05 12:06:32.098 +01:00  INF]  Executed DbCommand (317ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 12:07:06.210 +01:00  ERR]  Customer with National Id: 22222222222 already exist!
+[2023-12-05 12:07:06.251 +01:00  INF]  Executing ObjectResult, writing value of type 'PaymentSystem.Core.DTOs.ResponseDto`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-12-05 12:07:06.280 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI) in 60536.3953ms
+[2023-12-05 12:07:06.285 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI)'
+[2023-12-05 12:07:06.334 +01:00  INF]  Request finished HTTP/2 POST https://localhost:7214/api/v1/Customer application/json 192 - 404 - application/json;+charset=utf-8 60737.7976ms
+[2023-12-05 12:14:04.521 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:14:05.132 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:14:05.132 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:14:05.137 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:14:05.137 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:14:05.137 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:14:06.471 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 12:14:07.882 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 1438.0723ms
+[2023-12-05 12:14:07.912 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 12:14:07.924 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 12:14:07.962 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 49.8889ms
+[2023-12-05 12:14:08.355 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 431.1913ms
+[2023-12-05 12:14:08.523 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 12:14:09.118 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 593.9925ms
+[2023-12-05 12:14:30.522 +01:00  INF]  Request starting HTTP/2 POST https://localhost:7214/api/v1/Customer application/json 192
+[2023-12-05 12:14:30.538 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI)'
+[2023-12-05 12:14:30.625 +01:00  INF]  Route matched with {action = "InsertCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InsertCustomer(PaymentSystem.Core.DTOs.CustomerRequestDto) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:14:36.673 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 12:14:39.230 +01:00  INF]  Inserting customer details...
+[2023-12-05 12:14:45.509 +01:00  INF]  Executed DbCommand (260ms) [Parameters=[@__customerDetails_NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__customerDetails_NationalId_0
+[2023-12-05 12:14:56.078 +01:00  ERR]  Customer with National Id: 22222222222 already exist!
+[2023-12-05 12:14:56.103 +01:00  INF]  Executing ObjectResult, writing value of type 'PaymentSystem.Core.DTOs.ResponseDto`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-12-05 12:14:56.133 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI) in 25485.1479ms
+[2023-12-05 12:14:56.137 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI)'
+[2023-12-05 12:14:56.180 +01:00  INF]  Request finished HTTP/2 POST https://localhost:7214/api/v1/Customer application/json 192 - 404 - application/json;+charset=utf-8 25658.0119ms
+[2023-12-05 12:22:40.055 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:22:40.681 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:22:40.682 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:22:40.686 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:22:40.686 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:22:40.686 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:22:42.485 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 12:22:43.699 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 12:22:43.778 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 1312.6431ms
+[2023-12-05 12:22:43.941 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 242.2096ms
+[2023-12-05 12:22:43.969 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 12:22:44.138 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 168.8651ms
+[2023-12-05 12:22:44.283 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 12:22:44.807 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 523.6734ms
+[2023-12-05 12:22:55.075 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222223 - -
+[2023-12-05 12:22:55.096 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:22:55.191 +01:00  INF]  Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:22:59.811 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 12:23:02.033 +01:00  INF]  Getting customer details...
+[2023-12-05 12:23:09.313 +01:00  INF]  Getting customer details...NationalId: 22222222223
+[2023-12-05 12:23:21.904 +01:00  INF]  Executed DbCommand (390ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 12:23:51.013 +01:00  INF]  Executing ObjectResult, writing value of type 'PaymentSystem.Core.DTOs.ResponseDto`1[[PaymentSystem.Core.DTOs.CustomerResponseDto, PaymentSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-12-05 12:23:51.078 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI) in 55864.0141ms
+[2023-12-05 12:23:51.083 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:23:51.117 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222223 - - - 404 - application/json;+charset=utf-8 56041.9406ms
+[2023-12-05 12:23:59.980 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 12:23:59.981 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:23:59.981 +01:00  INF]  Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:24:01.783 +01:00  INF]  Getting customer details...
+[2023-12-05 12:24:09.236 +01:00  INF]  Getting customer details...NationalId: 22222222222
+[2023-12-05 12:24:11.256 +01:00  INF]  Executed DbCommand (79ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 12:24:16.588 +01:00  ERR]  Error mapping types.
+
+Mapping types:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Type Map configuration:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Destination Member:
+Id
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Type Map configuration:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Destination Member:
+Id
+
+ ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at lambda_method151(Closure , Object , CustomerResponseDto , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method151(Closure , Object , CustomerResponseDto , ResolutionContext )
+   at PaymentSystem.Core.Services.CustomerService.GetCustomerAsync(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 48
+[2023-12-05 12:34:41.229 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:34:41.903 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:34:41.903 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:34:41.910 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:34:41.910 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:34:41.910 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:34:43.686 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 12:34:44.712 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 1037.7208ms
+[2023-12-05 12:34:44.899 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 12:34:44.914 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 12:34:44.942 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 42.4611ms
+[2023-12-05 12:34:45.224 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 310.0767ms
+[2023-12-05 12:34:45.398 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 12:34:45.877 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 478.5664ms
+[2023-12-05 12:34:56.648 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 12:34:56.665 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:34:56.766 +01:00  INF]  Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:35:02.116 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 12:35:04.231 +01:00  INF]  Getting customer details...
+[2023-12-05 12:35:06.641 +01:00  INF]  Getting customer details...NationalId: 22222222222
+[2023-12-05 12:35:12.138 +01:00  INF]  Executed DbCommand (416ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 12:35:15.688 +01:00  ERR]  Error mapping types.
+
+Mapping types:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Type Map configuration:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Destination Member:
+Id
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Type Map configuration:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Destination Member:
+Id
+
+ ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at lambda_method151(Closure , Object , CustomerResponseDto , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method151(Closure , Object , CustomerResponseDto , ResolutionContext )
+   at PaymentSystem.Core.Services.CustomerService.GetCustomerAsync(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 48
+[2023-12-05 12:35:15.993 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI) in 19217.8208ms
+[2023-12-05 12:35:15.998 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:35:16.006 +01:00  ERR]  An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Type Map configuration:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+
+Destination Member:
+Id
+
+ ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at lambda_method151(Closure , Object , CustomerResponseDto , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method151(Closure , Object , CustomerResponseDto , ResolutionContext )
+   at PaymentSystem.Core.Services.CustomerService.GetCustomerAsync(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 48
+   at PaymentSystem.Core.Services.CustomerService.GetCustomerAsync(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 57
+   at PaymentSystemAPI.Controllers.CustomerController.GetCustomerById(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\Controllers\CustomerController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2023-12-05 12:35:16.069 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 500 - text/plain;+charset=utf-8 19421.3097ms
+[2023-12-05 12:35:50.055 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 12:35:50.056 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:35:50.057 +01:00  INF]  Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:35:55.746 +01:00  INF]  Getting customer details...
+[2023-12-05 12:35:57.061 +01:00  INF]  Getting customer details...NationalId: 22222222222
+[2023-12-05 12:35:57.097 +01:00  INF]  Executed DbCommand (25ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 12:38:01.108 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:38:01.735 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:38:01.738 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:38:01.756 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:38:01.756 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:38:01.757 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:38:02.760 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 12:38:03.790 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 1043.3572ms
+[2023-12-05 12:38:03.942 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 12:38:03.952 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 10.6337ms
+[2023-12-05 12:38:03.953 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 12:38:04.387 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 434.8056ms
+[2023-12-05 12:38:04.526 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 12:38:05.035 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 509.1492ms
+[2023-12-05 12:38:21.860 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 12:38:21.881 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:38:21.966 +01:00  INF]  Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:38:25.419 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 12:38:27.020 +01:00  INF]  Getting customer details...
+[2023-12-05 12:38:27.898 +01:00  INF]  Getting customer details...NationalId: 22222222222
+[2023-12-05 12:38:30.055 +01:00  INF]  Executed DbCommand (285ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 12:39:20.300 +01:00  ERR]  Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+   at lambda_method151(Closure , Object , CustomerResponseDto , ResolutionContext )
+   at PaymentSystem.Core.Services.CustomerService.GetCustomerAsync(String NationalId)
+[2023-12-05 12:39:20.799 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI) in 58822.1408ms
+[2023-12-05 12:39:20.803 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:39:20.811 +01:00  ERR]  An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Customer -> CustomerResponseDto
+PaymentSystem.Domain.Entities.Customer -> PaymentSystem.Core.DTOs.CustomerResponseDto
+   at lambda_method151(Closure , Object , CustomerResponseDto , ResolutionContext )
+   at PaymentSystem.Core.Services.CustomerService.GetCustomerAsync(String NationalId)
+   at PaymentSystem.Core.Services.CustomerService.GetCustomerAsync(String NationalId)
+   at PaymentSystemAPI.Controllers.CustomerController.GetCustomerById(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\Controllers\CustomerController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2023-12-05 12:39:20.927 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 500 - text/plain;+charset=utf-8 59067.8458ms
+[2023-12-05 12:39:24.101 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 12:39:24.142 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 41.3043ms
+[2023-12-05 12:39:25.498 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 12:39:25.498 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 12:39:25.498 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.6209ms
+[2023-12-05 12:39:25.514 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.4968ms
+[2023-12-05 12:39:25.740 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 12:39:25.744 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 3.5484ms
+[2023-12-05 12:39:30.698 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:39:30.840 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:39:30.840 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:39:30.845 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:39:30.845 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:39:30.845 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:40:06.897 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:40:07.387 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:40:07.388 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:40:07.394 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:40:07.394 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:40:07.394 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:40:08.240 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 12:40:09.070 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 835.6568ms
+[2023-12-05 12:40:09.255 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 12:40:09.256 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 12:40:09.308 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 53.3291ms
+[2023-12-05 12:40:09.566 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 309.9502ms
+[2023-12-05 12:40:09.704 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 12:40:10.129 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 424.3962ms
+[2023-12-05 12:40:19.536 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 12:40:19.554 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:40:19.599 +01:00  INF]  Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:40:21.662 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 12:40:24.535 +01:00  INF]  Getting customer details...
+[2023-12-05 12:40:25.190 +01:00  INF]  Getting customer details...NationalId: 22222222222
+[2023-12-05 12:40:26.880 +01:00  INF]  Executed DbCommand (327ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 12:40:51.590 +01:00  INF]  Successful Customer Details: {"NationalId":"22222222222","Name":"chuka","Surname":"okpalaugo","DateOfBirth":"1994-11-05T10:21:51.52Z","CustomerNumber":"08037869935","TransactionHistory":"string"}
+[2023-12-05 12:40:52.677 +01:00  INF]  Executing ObjectResult, writing value of type 'PaymentSystem.Core.DTOs.ResponseDto`1[[PaymentSystem.Core.DTOs.CustomerResponseDto, PaymentSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-12-05 12:40:52.695 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI) in 33089.1724ms
+[2023-12-05 12:40:52.697 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.GetCustomerById (PaymentSystemAPI)'
+[2023-12-05 12:40:52.717 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 200 - application/json;+charset=utf-8 33180.3189ms
+[2023-12-05 12:42:11.464 +01:00  INF]  Request starting HTTP/2 POST https://localhost:7214/api/v1/Customer application/json 192
+[2023-12-05 12:42:11.467 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI)'
+[2023-12-05 12:42:11.473 +01:00  INF]  Route matched with {action = "InsertCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InsertCustomer(PaymentSystem.Core.DTOs.CustomerRequestDto) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:42:11.521 +01:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2023-12-05 12:42:11.525 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI) in 51.9264ms
+[2023-12-05 12:42:11.525 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI)'
+[2023-12-05 12:42:11.525 +01:00  INF]  Request finished HTTP/2 POST https://localhost:7214/api/v1/Customer application/json 192 - 400 - application/json;+charset=utf-8 61.5346ms
+[2023-12-05 12:42:36.696 +01:00  INF]  Request starting HTTP/2 POST https://localhost:7214/api/v1/Customer application/json 192
+[2023-12-05 12:42:36.697 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI)'
+[2023-12-05 12:42:36.705 +01:00  INF]  Route matched with {action = "InsertCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InsertCustomer(PaymentSystem.Core.DTOs.CustomerRequestDto) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:42:39.235 +01:00  INF]  Inserting customer details...
+[2023-12-05 12:42:46.417 +01:00  INF]  Executed DbCommand (4ms) [Parameters=[@__customerDetails_NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__customerDetails_NationalId_0
+[2023-12-05 12:42:54.994 +01:00  INF]  Executed DbCommand (26ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?', @p17='?', @p18='?', @p19='?' (DbType = Boolean), @p20='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "CustomerNumber", "DateOfBirth", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NationalId", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TransactionHistory", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+[2023-12-05 12:42:57.629 +01:00  INF]  Customer detials successfully saved: {"Result":{},"Id":276,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+[2023-12-05 12:43:03.955 +01:00  INF]  Executing ObjectResult, writing value of type 'PaymentSystem.Core.DTOs.ResponseDto`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-12-05 12:43:03.957 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI) in 27252.382ms
+[2023-12-05 12:43:03.957 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.InsertCustomer (PaymentSystemAPI)'
+[2023-12-05 12:43:03.958 +01:00  INF]  Request finished HTTP/2 POST https://localhost:7214/api/v1/Customer application/json 192 - 201 - application/json;+charset=utf-8 27261.7999ms
+[2023-12-05 12:43:46.193 +01:00  INF]  Request starting HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 12:43:46.193 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 12:43:46.207 +01:00  INF]  Route matched with {action = "DeleteCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCustomer(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:43:48.504 +01:00  INF]  deleting customer details...
+[2023-12-05 12:43:52.535 +01:00  INF]  Executed DbCommand (1ms) [Parameters=[@__nationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__nationalId_0
+[2023-12-05 12:44:01.236 +01:00  INF]  Executed DbCommand (5ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+[2023-12-05 12:45:19.070 +01:00  ERR]  Value cannot be null. (Parameter 'logger')
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, Exception exception, String message, Object[] args)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 55
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+[2023-12-05 12:46:50.546 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI) in 184338.7807ms
+[2023-12-05 12:46:50.546 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 12:46:50.552 +01:00  ERR]  An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, Exception exception, String message, Object[] args)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 55
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 141
+   at PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\Controllers\CustomerController.cs:line 59
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2023-12-05 12:46:50.572 +01:00  INF]  Request finished HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 500 - text/plain;+charset=utf-8 184379.0705ms
+[2023-12-05 12:51:12.437 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:51:12.578 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:51:12.578 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:51:12.581 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:51:12.581 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:51:12.581 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:51:22.248 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:51:23.035 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:51:23.035 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:51:23.041 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:51:23.055 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:51:23.055 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:51:24.269 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 12:51:25.349 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 12:51:25.357 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 12:51:25.398 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 39.9836ms
+[2023-12-05 12:51:25.404 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 1152.5550ms
+[2023-12-05 12:51:25.691 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 341.4224ms
+[2023-12-05 12:51:25.949 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 12:51:26.423 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 473.4312ms
+[2023-12-05 12:51:38.757 +01:00  INF]  Request starting HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 12:51:38.768 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 12:51:38.823 +01:00  INF]  Route matched with {action = "DeleteCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCustomer(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:51:40.880 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 12:51:46.238 +01:00  INF]  deleting customer details...
+[2023-12-05 12:51:53.365 +01:00  INF]  Executed DbCommand (131ms) [Parameters=[@__nationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__nationalId_0
+[2023-12-05 12:51:55.077 +01:00  INF]  Executed DbCommand (9ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+[2023-12-05 12:52:24.075 +01:00  ERR]  Value cannot be null. (Parameter 'logger')
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, Exception exception, String message, Object[] args)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 56
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+[2023-12-05 12:52:24.225 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI) in 45396.7567ms
+[2023-12-05 12:52:24.227 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 12:52:24.233 +01:00  ERR]  An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, Exception exception, String message, Object[] args)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 56
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 141
+   at PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\Controllers\CustomerController.cs:line 59
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2023-12-05 12:52:24.263 +01:00  INF]  Request finished HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 500 - text/plain;+charset=utf-8 45506.6639ms
+[2023-12-05 12:52:26.289 +01:00  INF]  Request starting HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 12:52:26.289 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 12:52:26.290 +01:00  INF]  Route matched with {action = "DeleteCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCustomer(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:52:31.627 +01:00  INF]  deleting customer details...
+[2023-12-05 12:52:33.452 +01:00  INF]  Executed DbCommand (1ms) [Parameters=[@__nationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__nationalId_0
+[2023-12-05 12:52:39.001 +01:00  INF]  Executed DbCommand (11ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+[2023-12-05 12:53:27.765 +01:00  ERR]  Value cannot be null. (Parameter 'logger')
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, Exception exception, String message, Object[] args)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 56
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+[2023-12-05 12:53:27.836 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI) in 61545.1734ms
+[2023-12-05 12:53:27.837 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 12:53:27.840 +01:00  ERR]  An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, Exception exception, String message, Object[] args)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 56
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 141
+   at PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\Controllers\CustomerController.cs:line 59
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2023-12-05 12:53:27.844 +01:00  INF]  Request finished HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 500 - text/plain;+charset=utf-8 61554.8431ms
+[2023-12-05 12:59:05.724 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 12:59:06.180 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 12:59:06.180 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 12:59:06.185 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 12:59:06.185 +01:00  INF]  Hosting environment: Development
+[2023-12-05 12:59:06.185 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 12:59:07.059 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 12:59:07.953 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 901.6003ms
+[2023-12-05 12:59:08.037 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 12:59:08.037 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 12:59:08.069 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 32.7797ms
+[2023-12-05 12:59:08.306 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 269.3553ms
+[2023-12-05 12:59:08.450 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 12:59:08.911 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 461.6443ms
+[2023-12-05 12:59:17.082 +01:00  INF]  Request starting HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 12:59:17.093 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 12:59:17.138 +01:00  INF]  Route matched with {action = "DeleteCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCustomer(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 12:59:19.247 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 12:59:21.016 +01:00  INF]  deleting customer details...
+[2023-12-05 12:59:24.848 +01:00  INF]  Executed DbCommand (235ms) [Parameters=[@__nationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__nationalId_0
+[2023-12-05 12:59:32.310 +01:00  INF]  Executed DbCommand (6ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+[2023-12-05 13:00:11.656 +01:00  ERR]  Value cannot be null. (Parameter 'logger')
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, Exception exception, String message, Object[] args)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 55
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+[2023-12-05 13:00:11.774 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI) in 54629.566ms
+[2023-12-05 13:00:11.777 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 13:00:11.782 +01:00  ERR]  An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogError(ILogger logger, Exception exception, String message, Object[] args)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 55
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 141
+   at PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\Controllers\CustomerController.cs:line 59
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2023-12-05 13:00:11.818 +01:00  INF]  Request finished HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 500 - text/plain;+charset=utf-8 54735.9765ms
+[2023-12-05 13:00:54.103 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 13:00:54.713 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 13:00:54.713 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 13:00:54.722 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 13:00:54.722 +01:00  INF]  Hosting environment: Development
+[2023-12-05 13:00:54.722 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 13:00:55.608 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 13:00:56.592 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 13:00:56.596 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 995.2867ms
+[2023-12-05 13:00:56.602 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 9.0212ms
+[2023-12-05 13:00:56.613 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 13:00:56.829 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 216.4901ms
+[2023-12-05 13:00:57.323 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 13:00:57.706 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 382.8537ms
+[2023-12-05 13:01:05.842 +01:00  INF]  Request starting HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 13:01:05.853 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 13:01:05.903 +01:00  INF]  Route matched with {action = "DeleteCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCustomer(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 13:01:08.236 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 13:01:09.969 +01:00  INF]  deleting customer details...
+[2023-12-05 13:01:13.076 +01:00  INF]  Executed DbCommand (319ms) [Parameters=[@__nationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__nationalId_0
+[2023-12-05 13:01:15.908 +01:00  INF]  Executed DbCommand (6ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+[2023-12-05 13:02:00.303 +01:00  ERR]  Value cannot be null. (Parameter 'entity')
+System.ArgumentNullException: Value cannot be null. (Parameter 'entity')
+   at Microsoft.EntityFrameworkCore.Utilities.Check.NotNull[T](T value, String parameterName)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Remove(TEntity entity)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 49
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+[2023-12-05 13:04:08.359 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 13:04:08.873 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 13:04:08.873 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 13:04:08.883 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 13:04:08.883 +01:00  INF]  Hosting environment: Development
+[2023-12-05 13:04:08.883 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 13:04:10.167 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 13:04:11.093 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 937.0288ms
+[2023-12-05 13:04:11.156 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 13:04:11.260 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 13:04:11.267 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 110.3933ms
+[2023-12-05 13:04:11.569 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 309.3144ms
+[2023-12-05 13:04:11.730 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 13:04:12.329 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 598.7537ms
+[2023-12-05 13:04:22.013 +01:00  INF]  Request starting HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 13:04:22.025 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 13:04:22.095 +01:00  INF]  Route matched with {action = "DeleteCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCustomer(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 13:04:24.503 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 13:04:36.849 +01:00  INF]  deleting customer details...
+[2023-12-05 13:04:38.910 +01:00  INF]  Executed DbCommand (405ms) [Parameters=[@__nationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__nationalId_0
+[2023-12-05 13:04:43.604 +01:00  INF]  Executed DbCommand (6ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+[2023-12-05 13:05:06.026 +01:00  ERR]  Value cannot be null. (Parameter 'entity')
+System.ArgumentNullException: Value cannot be null. (Parameter 'entity')
+   at Microsoft.EntityFrameworkCore.Utilities.Check.NotNull[T](T value, String parameterName)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Remove(TEntity entity)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 49
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+[2023-12-05 13:05:06.152 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI) in 44049.7939ms
+[2023-12-05 13:05:06.155 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 13:05:06.159 +01:00  ERR]  An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'entity')
+   at Microsoft.EntityFrameworkCore.Utilities.Check.NotNull[T](T value, String parameterName)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Remove(TEntity entity)
+   at PaymentSystem.Infrastructure.Repository.CustomerRepository.DeleteCustomerByNationalId(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Infrastructure\Repository\CustomerRepository.cs:line 49
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 131
+   at PaymentSystem.Core.Services.CustomerService.DeleteCustomerAsync(String nationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystem.Core\Services\CustomerService.cs:line 141
+   at PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer(String NationalId) in C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\Controllers\CustomerController.cs:line 59
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2023-12-05 13:05:06.203 +01:00  INF]  Request finished HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 500 - text/plain;+charset=utf-8 44189.7995ms
+[2023-12-05 13:06:43.240 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 13:06:43.674 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 13:06:43.674 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 13:06:43.679 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 13:06:43.679 +01:00  INF]  Hosting environment: Development
+[2023-12-05 13:06:43.679 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 13:06:44.588 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 13:06:45.442 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 866.3994ms
+[2023-12-05 13:06:45.452 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 13:06:45.496 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 13:06:45.499 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 47.4733ms
+[2023-12-05 13:06:45.825 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 329.1901ms
+[2023-12-05 13:06:45.967 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 13:06:46.399 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 431.7385ms
+[2023-12-05 13:07:04.980 +01:00  INF]  Request starting HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 13:07:04.996 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 13:07:05.047 +01:00  INF]  Route matched with {action = "DeleteCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCustomer(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 13:07:07.084 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 13:07:08.596 +01:00  INF]  deleting customer details...
+[2023-12-05 13:07:11.713 +01:00  INF]  Executed DbCommand (274ms) [Parameters=[@__nationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__nationalId_0
+[2023-12-05 13:07:15.524 +01:00  INF]  Executed DbCommand (6ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 13:08:29.040 +01:00  INF]  Executed DbCommand (27ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "AspNetUsers"
+WHERE "Id" = @p0 AND "ConcurrencyStamp" = @p1;
+[2023-12-05 13:08:29.093 +01:00  ERR]  Customer with national Id: 22222222222 deleted successfully
+[2023-12-05 13:08:29.105 +01:00  INF]  Executing ObjectResult, writing value of type 'PaymentSystem.Core.DTOs.ResponseDto`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-12-05 13:08:29.117 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI) in 84063.4354ms
+[2023-12-05 13:08:29.120 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 13:08:29.137 +01:00  INF]  Request finished HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 200 - application/json;+charset=utf-8 84156.3508ms
+[2023-12-05 13:08:31.190 +01:00  INF]  Request starting HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - -
+[2023-12-05 13:08:31.190 +01:00  INF]  Executing endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 13:08:31.191 +01:00  INF]  Route matched with {action = "DeleteCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCustomer(System.String) on controller PaymentSystemAPI.Controllers.CustomerController (PaymentSystemAPI).
+[2023-12-05 13:08:32.484 +01:00  INF]  deleting customer details...
+[2023-12-05 13:08:33.133 +01:00  INF]  Executed DbCommand (1ms) [Parameters=[@__nationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__nationalId_0
+[2023-12-05 13:08:36.667 +01:00  INF]  Executed DbCommand (1ms) [Parameters=[@__NationalId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CustomerNumber", a."DateOfBirth", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Name", a."NationalId", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."Surname", a."TransactionHistory", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NationalId" = @__NationalId_0
+LIMIT 1
+[2023-12-05 13:08:48.908 +01:00  INF]  Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "AspNetUsers"
+WHERE "Id" = @p0 AND "ConcurrencyStamp" = @p1;
+[2023-12-05 13:09:25.769 +01:00  ERR]  Customer with national Id: 22222222222 deleted successfully
+[2023-12-05 13:09:25.775 +01:00  INF]  Executing ObjectResult, writing value of type 'PaymentSystem.Core.DTOs.ResponseDto`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-12-05 13:09:25.775 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI) in 54584.0538ms
+[2023-12-05 13:09:25.775 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.DeleteCustomer (PaymentSystemAPI)'
+[2023-12-05 13:09:25.778 +01:00  INF]  Request finished HTTP/2 DELETE https://localhost:7214/api/v1/Customer?NationalId=22222222222 - - - 200 - application/json;+charset=utf-8 54586.6089ms

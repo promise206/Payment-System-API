@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using PaymentSystem.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,7 +26,14 @@ namespace PaymentSystem.Infrastructure.Repository
         /// <returns></returns>
         public async Task DeleteAsync(string id)
         {
-            _db.Remove(await _db.FindAsync(id));
+            try
+            {
+                _db.Remove(await _db.FindAsync(id));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         /// <summary>
         /// Deletes List of objects
@@ -32,7 +41,14 @@ namespace PaymentSystem.Infrastructure.Repository
         /// <param name="entities"></param>
         public void DeleteRangeAsync(IEnumerable<T> entities)
         {
-            _db.RemoveRange(entities);
+            try
+            {
+                _db.RemoveRange(entities);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         /// <summary>
         /// Inserts An Object
@@ -53,11 +69,30 @@ namespace PaymentSystem.Infrastructure.Repository
 
         public void Update(T item)
         {
-            // attaches instance to the contex
-            // t, then sets the state
-            // as modified
-            _db.Attach(item);
-            _context.Entry(item).State = EntityState.Modified;
+            try
+            {
+                // attaches instance to the contex
+                // t, then sets the state
+                // as modified
+                _db.Attach(item);
+                _context.Entry(item).State = EntityState.Modified;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public int Count(Expression<Func<T, bool>> lambda)
+        {
+            try
+            {
+                return _db.Count(lambda);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

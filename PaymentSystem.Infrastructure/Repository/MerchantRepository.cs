@@ -1,4 +1,5 @@
-﻿using PaymentSystem.Domain.Entities;
+﻿using Microsoft.Extensions.Logging;
+using PaymentSystem.Domain.Entities;
 using PaymentSystem.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;

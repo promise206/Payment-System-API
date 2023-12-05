@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.Logging;
 using PaymentSystem.Core.Interfaces;
 using PaymentSystem.Infrastructure.Interfaces;
 using System;
@@ -16,9 +17,12 @@ namespace PaymentSystem.Infrastructure.Repository
         private IDbContextTransaction _objTransaction;
         private CustomerRepository _customer;
         private MerchantRepository _Merchant;
-        public UnitOfWork(CustomerDbContext context)
+        private readonly ILogger<UnitOfWork> _logger;
+
+        public UnitOfWork(CustomerDbContext context, ILogger<UnitOfWork> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public ICustomerRepository Customer => _customer ??= new CustomerRepository(_context);
@@ -36,8 +40,11 @@ namespace PaymentSystem.Infrastructure.Repository
 
         public async Task Rollback()
         {
-            await _objTransaction?.RollbackAsync();
-            await _objTransaction.DisposeAsync();
+            if (_objTransaction != null)
+            {
+                await _objTransaction.RollbackAsync();
+                await _objTransaction.DisposeAsync();
+            }
         }
 
 
@@ -47,9 +54,10 @@ namespace PaymentSystem.Infrastructure.Repository
             {
                 await _context.SaveChangesAsync();
             }
-            catch
+            catch (Exception exception)
             {
-                throw new Exception();
+                _logger.LogError(exception, exception.Message);
+                throw;
             }
         }
 
