@@ -15,5 +15,12 @@ namespace PaymentSystem.Core.Interfaces
         /// <param name="NationalId"></param>
         /// <returns></returns>
         Task<Customer?> Get(string NationalId);
+
+        /// <summary>
+        /// Delet Customer by national Id
+        /// </summary>
+        /// <param name="NationalId"></param>
+        /// <returns></returns>
+        Task DeleteCustomerByNationalId(string NationalId);
     }
 }

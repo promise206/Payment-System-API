@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using PaymentSystem.Core.DTOs;
 using PaymentSystem.Core.Interfaces;
@@ -39,7 +40,7 @@ namespace PaymentSystem.Core.Services
             _logger.LogInformation($"Getting customer details...NationalId: {NationalId}");
             var customer = await _unitOfWork.Customer.Get(NationalId);
             if (customer == null)
-                return ResponseDto<CustomerResponseDto>.Fail("customer does not exist");
+                return ResponseDto<CustomerResponseDto>.Fail("customer does not exist", (int)HttpStatusCode.NotFound);
 
             var customerDetails = _mapper.Map<CustomerResponseDto>(customer);
             _logger.LogInformation($"Successful Customer Details: {customerDetails}");
@@ -57,8 +58,8 @@ namespace PaymentSystem.Core.Services
             var checkEmail = await _unitOfWork.Customer.Get(customerDetails.NationalId);
             if (checkEmail != null)
             {
-                _logger.LogInformation($"Customer with National Id: {customerDetails.NationalId} already exist!");
-                return ResponseDto<bool>.Fail("Customer already Exists", (int)HttpStatusCode.BadRequest);
+                _logger.LogError($"Customer with National Id: {customerDetails.NationalId} already exist!");
+                return ResponseDto<bool>.Fail("Customer already Exists", (int)HttpStatusCode.NotFound);
             }
             var userModel = _mapper.Map<Customer>(customerDetails);
 
@@ -74,10 +75,26 @@ namespace PaymentSystem.Core.Services
             return true;
         }
 
-        
-        public async Task<bool> DeleteCustomerAsync(CustomerRequestDto customerDetails)
+        /// <summary>
+        /// delete customer
+        /// </summary>
+        /// <param name="NationalId"></param>
+        /// <returns></returns>
+        public async Task<ResponseDto<bool>> DeleteCustomerAsync(string NationalId)
         {
-            return true;
+            var customer = await _unitOfWork.Customer.Get(NationalId);
+
+            if (customer == null)
+            {
+                _logger.LogError($"Customer with NationalId: {NationalId} not found!");
+                return ResponseDto<bool>.Fail("Customer not found!", (int)HttpStatusCode.NotFound);
+            }
+
+            await _unitOfWork.Customer.DeleteCustomerByNationalId(customer.NationalId);
+            await _unitOfWork.Save();
+
+            _logger.LogError($"Customer with national Id: {NationalId} deleted successfully");
+            return ResponseDto<bool>.Success("Customer deleted Succesfully", true, (int)HttpStatusCode.OK); ;
         }
     }
 }

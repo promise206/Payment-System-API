@@ -28,5 +28,15 @@ namespace PaymentSystem.Infrastructure.Repository
         {
             return await _dbContext.Customer.Where(x => x.Id == NationalId).FirstOrDefaultAsync();
         }
+
+        /// <summary>
+        /// Delet Customer by national Id
+        /// </summary>
+        /// <param name="NationalId"></param>
+        /// <returns></returns>
+        public async Task DeleteCustomerByNationalId(string NationalId)
+        {
+            _db.Remove(await _db.FindAsync(NationalId));
+        }
     }
 }

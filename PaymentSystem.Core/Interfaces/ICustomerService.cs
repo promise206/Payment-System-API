@@ -23,5 +23,11 @@ namespace PaymentSystem.Core.Interfaces
         /// <returns></returns>
         Task<ResponseDto<bool>> InsertCustomerAsync(CustomerRequestDto customerDetails);
 
+        /// <summary>
+        /// delete customer
+        /// </summary>
+        /// <param name="NationalId"></param>
+        /// <returns></returns>
+        Task<ResponseDto<bool>> DeleteCustomerAsync(string NationalId);
     }
 }

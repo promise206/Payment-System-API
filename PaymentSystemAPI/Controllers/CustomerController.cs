@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PaymentSystem.Core.DTOs;
 using PaymentSystem.Core.Interfaces;
 using System.Net.Mime;
 using System.Security.Claims;
@@ -30,6 +31,25 @@ namespace PaymentSystemAPI.Controllers
         {
             _logger.LogInformation($"Getting customer details...");
             var response = await _customerService.GetCustomerAsync(NationalId);
+            return StatusCode(response.StatusCode, response);
+        }
+
+        /// <summary>
+        /// Insert customer details
+        /// </summary>
+        /// <param name="customerDetails"></param>
+        /// <returns></returns>
+        public async Task<IActionResult> InsertCustomer(CustomerRequestDto customerDetails)
+        {
+            _logger.LogInformation($"Inserting customer details...");
+            var response = await _customerService.InsertCustomerAsync(customerDetails);
+            return StatusCode(response.StatusCode, response);
+        }
+
+        public async Task<IActionResult> DeleteCustomer(string NationalId)
+        {
+            _logger.LogInformation($"deleting customer details...");
+            var response = await _customerService.DeleteCustomerAsync(NationalId);
             return StatusCode(response.StatusCode, response);
         }
     }
