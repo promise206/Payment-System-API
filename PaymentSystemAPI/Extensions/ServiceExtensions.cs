@@ -16,6 +16,7 @@ namespace PaymentSystemAPI.Extensions
 
             // Register dependencies here
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IMerchantService, MerchantService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IMerchantRepository, MerchantRepository>();

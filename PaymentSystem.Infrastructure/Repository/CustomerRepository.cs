@@ -25,11 +25,11 @@ namespace PaymentSystem.Infrastructure.Repository
         /// </summary>
         /// <param name="NationalId"></param>
         /// <returns></returns>
-        public async Task<Customer?> GetByNationalId(string NationalId)
+        public async Task<Customer?> GetByNationalId(string nationalId)
         {
             try
             {
-                return await _dbContext.Customer.Where(x => x.NationalId == NationalId).FirstOrDefaultAsync();
+                return await _dbContext.Customer.Where(x => x.NationalId == nationalId).FirstOrDefaultAsync();
             }
             catch (Exception)
             {
@@ -42,11 +42,11 @@ namespace PaymentSystem.Infrastructure.Repository
         /// </summary>
         /// <param name="NationalId"></param>
         /// <returns></returns>
-        public async Task DeleteCustomerByNationalId(string NationalId)
+        public async Task DeleteCustomerByNationalId(string nationalId)
         {
             try
             {
-                _db.Remove(await _dbContext.Customer.Where(x => x.NationalId == NationalId).FirstOrDefaultAsync());
+                _db.Remove(await _dbContext.Customer.Where(x => x.NationalId == nationalId).FirstOrDefaultAsync());
             }
             catch (Exception)
             {

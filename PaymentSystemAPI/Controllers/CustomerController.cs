@@ -26,8 +26,8 @@ namespace PaymentSystemAPI.Controllers
         /// </summary>
         /// <param name="NationalId"></param>
         /// <returns></returns>
-        [HttpGet(Name = "get-customer-details")]
-        public async Task<IActionResult> GetCustomerById(string NationalId)
+        [HttpGet("get-customer-details")]
+        public async Task<IActionResult> GetCustomerByNationalId(string NationalId)
         {
             _logger.LogInformation($"Getting customer details...");
             var response = await _customerService.GetCustomerAsync(NationalId);
@@ -39,7 +39,7 @@ namespace PaymentSystemAPI.Controllers
         /// </summary>
         /// <param name="customerDetails"></param>
         /// <returns></returns>
-        [HttpPost(Name = "insert-customer-details")]
+        [HttpPost("insert-customer-details")]
         public async Task<IActionResult> InsertCustomer(CustomerRequestDto customerDetails)
         {
             _logger.LogInformation($"Inserting customer details...");
@@ -52,7 +52,7 @@ namespace PaymentSystemAPI.Controllers
         /// </summary>
         /// <param name="NationalId"></param>
         /// <returns></returns>
-        [HttpDelete(Name = "delete-customer-details")]
+        [HttpDelete("delete-customer-details")]
         public async Task<IActionResult> DeleteCustomer(string NationalId)
         {
             _logger.LogInformation($"deleting customer details...");
@@ -65,7 +65,7 @@ namespace PaymentSystemAPI.Controllers
         /// </summary>
         /// <param name="details"></param>
         /// <returns></returns>
-        [HttpPut(Name = "update-customer-details")]
+        [HttpPut("update-customer-details")]
         public async Task<IActionResult> UpdateCustomer(string nationalId, CustomerUpdateRequestDto details)
         {
             _logger.LogInformation($"Editing customer details...");

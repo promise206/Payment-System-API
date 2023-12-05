@@ -11,5 +11,18 @@ namespace PaymentSystem.Infrastructure.Interfaces
 {
     public interface IMerchantRepository : IGenericRepository<Merchant>
     {
+        // <summary>
+        /// Get merchant by number
+        /// </summary>
+        /// <param name="MerchantNumber"></param>
+        /// <returns></returns>
+        Task<Merchant?> GetByMerchantNumber(long merchantNumber);
+
+        /// <summary>
+        /// Delete merchant
+        /// </summary>
+        /// <param name="merchantNumber"></param>
+        /// <returns></returns>
+        Task DeleteMerchantByMerchantNumber(long merchantNumber);
     }
 }

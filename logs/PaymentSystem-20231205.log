@@ -1178,3 +1178,17 @@ WHERE "Id" = @p20 AND "ConcurrencyStamp" = @p21;
 [2023-12-05 15:57:21.359 +01:00  INF]  Executed action PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer (PaymentSystemAPI) in 89067.1501ms
 [2023-12-05 15:57:21.363 +01:00  INF]  Executed endpoint 'PaymentSystemAPI.Controllers.CustomerController.UpdateCustomer (PaymentSystemAPI)'
 [2023-12-05 15:57:21.390 +01:00  INF]  Request finished HTTP/2 PUT https://localhost:7214/api/v1/Customer?nationalId=22222222223 application/json 154 - 200 - application/json;+charset=utf-8 89198.3425ms
+[2023-12-05 21:24:01.747 +01:00  INF]  User profile is available. Using 'C:\Users\ChukwukaOkpalaugo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-12-05 21:24:02.471 +01:00  INF]  Now listening on: https://localhost:7214
+[2023-12-05 21:24:02.471 +01:00  INF]  Now listening on: http://localhost:5223
+[2023-12-05 21:24:02.476 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-12-05 21:24:02.476 +01:00  INF]  Hosting environment: Development
+[2023-12-05 21:24:02.476 +01:00  INF]  Content root path: C:\Users\ChukwukaOkpalaugo\Documents\Okpalaugo Chukwuka\Peabux Payment System API\PaymentSystemAPI\
+[2023-12-05 21:24:05.403 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+[2023-12-05 21:24:06.342 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+[2023-12-05 21:24:06.369 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 977.8404ms
+[2023-12-05 21:24:06.369 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 24.7488ms
+[2023-12-05 21:24:06.411 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+[2023-12-05 21:24:06.546 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 135.3140ms
+[2023-12-05 21:24:07.043 +01:00  INF]  Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+[2023-12-05 21:24:07.416 +01:00  INF]  Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 373.1593ms
