@@ -11,24 +11,6 @@ namespace PaymentSystem.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Address",
-                columns: table => new
-                {
-                    MerchantNumber = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    BusinessIdNumber = table.Column<string>(type: "text", nullable: false),
-                    BusinessName = table.Column<string>(type: "text", nullable: false),
-                    ContactName = table.Column<string>(type: "text", nullable: false),
-                    AverageTransactionVolume = table.Column<string>(type: "text", nullable: true),
-                    ContactSurname = table.Column<string>(type: "text", nullable: false),
-                    DateOfEstablishment = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Address", x => x.MerchantNumber);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -47,7 +29,7 @@ namespace PaymentSystem.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "text", nullable: false),
-                    NationalId = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
+                    NationalId = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: true),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Surname = table.Column<string>(type: "text", nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
@@ -71,6 +53,24 @@ namespace PaymentSystem.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Merchant",
+                columns: table => new
+                {
+                    MerchantNumber = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    BusinessIdNumber = table.Column<string>(type: "text", nullable: false),
+                    BusinessName = table.Column<string>(type: "text", nullable: false),
+                    ContactName = table.Column<string>(type: "text", nullable: false),
+                    AverageTransactionVolume = table.Column<string>(type: "text", nullable: true),
+                    ContactSurname = table.Column<string>(type: "text", nullable: false),
+                    DateOfEstablishment = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Merchant", x => x.MerchantNumber);
                 });
 
             migrationBuilder.CreateTable(
@@ -220,9 +220,6 @@ namespace PaymentSystem.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Address");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -236,6 +233,9 @@ namespace PaymentSystem.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Merchant");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

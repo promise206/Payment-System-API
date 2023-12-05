@@ -191,7 +191,6 @@ namespace PaymentSystem.Infrastructure.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("NationalId")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("character varying(11)");
 
@@ -273,7 +272,7 @@ namespace PaymentSystem.Infrastructure.Migrations
 
                     b.HasKey("MerchantNumber");
 
-                    b.ToTable("Address");
+                    b.ToTable("Merchant");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

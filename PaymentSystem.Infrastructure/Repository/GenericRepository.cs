@@ -59,7 +59,5 @@ namespace PaymentSystem.Infrastructure.Repository
             _db.Attach(item);
             _context.Entry(item).State = EntityState.Modified;
         }
-
-
     }
 }

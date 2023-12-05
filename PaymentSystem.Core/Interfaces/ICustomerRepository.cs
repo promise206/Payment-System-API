@@ -9,5 +9,11 @@ namespace PaymentSystem.Core.Interfaces
 {
     public interface ICustomerRepository : IGenericRepository<Customer>
     {
+        /// <summary>
+        /// Get customer by National Id
+        /// </summary>
+        /// <param name="NationalId"></param>
+        /// <returns></returns>
+        Task<Customer?> Get(string NationalId);
     }
 }

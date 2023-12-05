@@ -1,0 +1,10 @@
+[2023-12-05 10:16:11.662 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 
+[2023-12-05 10:16:12.903 +01:00  INF]  Executed DbCommand (169ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+[2023-12-05 10:16:36.351 +01:00  INF]  Entity Framework Core 6.0.25 initialized 'CustomerDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.22+7b04a420e2d10ef5ef0db6abe49a6ad53a2f8653' with options: MaxPoolSize=1024 

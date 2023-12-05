@@ -12,7 +12,7 @@ using PaymentSystem.Infrastructure;
 namespace PaymentSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(CustomerDbContext))]
-    [Migration("20231204144049_InitialMigration")]
+    [Migration("20231205091636_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -193,7 +193,6 @@ namespace PaymentSystem.Infrastructure.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("NationalId")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("character varying(11)");
 
@@ -275,7 +274,7 @@ namespace PaymentSystem.Infrastructure.Migrations
 
                     b.HasKey("MerchantNumber");
 
-                    b.ToTable("Address");
+                    b.ToTable("Merchant");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

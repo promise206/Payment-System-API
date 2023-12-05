@@ -11,12 +11,22 @@ namespace PaymentSystem.Infrastructure.Repository
 {
     public class CustomerRepository : GenericRepository<Customer>, ICustomerRepository
     {
-        private readonly CustomerDbContext _context;
+        private readonly CustomerDbContext _dbContext;
         private readonly DbSet<Customer> _db;
-        public CustomerRepository(CustomerDbContext context) : base(context)
+        public CustomerRepository(CustomerDbContext dbContext) : base(dbContext)
         {
-            _context = context;
-            _db = context.Set<Customer>();
+            _dbContext = dbContext;
+            _db = dbContext.Set<Customer>();
+        }
+
+        /// <summary>
+        /// Get customer by National Id
+        /// </summary>
+        /// <param name="NationalId"></param>
+        /// <returns></returns>
+        public async Task<Customer?> Get(string NationalId)
+        {
+            return await _dbContext.Customer.Where(x => x.Id == NationalId).FirstOrDefaultAsync();
         }
     }
 }

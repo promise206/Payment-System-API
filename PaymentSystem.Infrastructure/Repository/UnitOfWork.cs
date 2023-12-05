@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using PaymentSystem.Core.Interfaces;
+using PaymentSystem.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,18 +9,20 @@ using System.Threading.Tasks;
 
 namespace PaymentSystem.Infrastructure.Repository
 {
-    public class UnitOfWork : IUnitOfWork, IDisposable
+    public class UnitOfWork : IUnitOfWork
     {
         private bool _disposedValue;
         private readonly CustomerDbContext _context;
         private IDbContextTransaction _objTransaction;
-        private ICustomerRepository _userRepository;
+        private CustomerRepository _customer;
+        private MerchantRepository _Merchant;
         public UnitOfWork(CustomerDbContext context)
         {
             _context = context;
         }
 
-        public ICustomerRepository UserRepository => _userRepository ??= new CustomerRepository(_context);
+        public ICustomerRepository Customer => _customer ??= new CustomerRepository(_context);
+        public IMerchantRepository Merchant => _Merchant ??= new MerchantRepository(_context);
 
         public async Task CreateTransaction()
         {

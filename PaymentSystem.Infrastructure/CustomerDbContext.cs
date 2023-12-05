@@ -17,7 +17,7 @@ namespace PaymentSystem.Infrastructure
         {
 
         }
-        public DbSet<Customer> AppUser { get; set; }
-        public DbSet<Merchant> Address { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Merchant> Merchant { get; set; }
     }
 }
