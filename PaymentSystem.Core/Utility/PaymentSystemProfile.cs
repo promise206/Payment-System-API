@@ -16,6 +16,9 @@ namespace PaymentSystem.Core.Utility
             CreateMap<CustomerRequestDto, Customer>();
             CreateMap<Customer, CustomerResponseDto>();
             CreateMap<CustomerUpdateRequestDto, Customer>();
+            CreateMap<MerchantRequestDto, Merchant>();
+            CreateMap<Merchant, MerchantResponseDto>();
+            CreateMap<MerchantUpdateRequestDto, Merchant>();
         }
     }
 }

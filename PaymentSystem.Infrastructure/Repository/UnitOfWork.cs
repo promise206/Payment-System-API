@@ -23,6 +23,7 @@ namespace PaymentSystem.Infrastructure.Repository
         {
             _context = context;
             _logger = logger;
+            _objTransaction = _context.Database.BeginTransaction();
         }
 
         public ICustomerRepository Customer => _customer ??= new CustomerRepository(_context);

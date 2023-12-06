@@ -23,9 +23,6 @@ namespace PaymentSystem.Core.DTOs
         public string ContactSurname { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [Display(Name = "Date of Establishment")]
-        [DateLessThanAYearAgo(ErrorMessage = "Date must be more than 1 year ago.")]
         public DateTime DateOfEstablishment { get; set; }
     }
 }

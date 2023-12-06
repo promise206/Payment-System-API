@@ -39,6 +39,7 @@ namespace PaymentSystemAPI.Controllers
         /// </summary>
         /// <param name="merchantDetails"></param>
         /// <returns></returns>
+        [HttpPost("insert-merchant-details")]
         public async Task<IActionResult> InsertMerchant(MerchantRequestDto merchantDetails)
         {
             _logger.LogInformation($"Inserting merchant details...");

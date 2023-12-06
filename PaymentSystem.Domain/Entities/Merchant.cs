@@ -28,26 +28,6 @@ namespace PaymentSystem.Domain.Entities
         public string ContactSurname { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [Display(Name = "Date of Establishment")]
-        [DateLessThanAYearAgo(ErrorMessage = "Date must be more than 1 year ago.")]
         public DateTime DateOfEstablishment { get; set; }
-    }
-
-    public class DateLessThanAYearAgoAttribute : ValidationAttribute
-    {
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-        {
-            if (value is DateTime date)
-            {
-                // Check if the date is less than 1 year ago
-                if (date >= DateTime.Now.AddYears(-1))
-                {
-                    return new ValidationResult("Date must be more than 1 year ago.");
-                }
-            }
-
-            return ValidationResult.Success;
-        }
     }
 }

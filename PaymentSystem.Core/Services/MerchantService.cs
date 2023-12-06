@@ -35,11 +35,10 @@ namespace PaymentSystem.Core.Services
         {
             try
             {
-
                 _logger.LogInformation($"Getting customer details...NationalId: {merchantNumber}");
                 var merchant = await _unitOfWork.Merchant.GetByMerchantNumber(merchantNumber);
                 if (merchant == null)
-                    return ResponseDto<MerchantResponseDto>.Fail("customer does not exist", (int)HttpStatusCode.NotFound);
+                    return ResponseDto<MerchantResponseDto>.Fail("Merchant does not exist", (int)HttpStatusCode.NotFound);
 
                 var merchantDetails = _mapper.Map<MerchantResponseDto>(merchant);
                 _logger.LogInformation($"Successful merchant Details: {JsonConvert.SerializeObject(merchantDetails)}");
